@@ -25,11 +25,12 @@ class UsersController < ApplicationController
 
   # POST /users or /users.json
   
+  
   def create
     @user = User.new(user_params)
     if @user.save
       log_in(@user)
-      redirect_to user_path(@user.id)
+      redirect_to tasks_path, notice: 'アカウントを登録しました'
     else
       render :new
     end
@@ -47,10 +48,7 @@ class UsersController < ApplicationController
   # DELETE /users/1 or /users/1.json
   def destroy
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: "User was successfully destroyed." }
-      format.json { head :no_content }
-    end
+    redirect_to new_session_path
   end
 
   private
