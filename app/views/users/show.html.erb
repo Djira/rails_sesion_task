@@ -1,19 +1,7 @@
-<p id="notice"><%= notice %></p>
+<h1>アカウント詳細画面</h1>
 
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
+<p>名前: <%= @user.name %></p>
+<p>メールアドレス: <%= @user.email %></p>
 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Password digest:</strong>
-  <%= @user.password_digest %>
-</p>
-
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<%= link_to "編集", edit_user_path(@user), id: "edit-user" %> | 
+<%= link_to "削除", @user, method: :delete, data: { confirm:  "本当に削除してもよろしいですか？" }, id: "destroy-user" %>
