@@ -44,4 +44,4 @@ ja:
     update:
       updated: タスクを更新しました
     destroy:
-      destroyed: タスクを削除しました
+      destroyed: タスクを削除しました
